@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kis Photography | 3D Gallery</title>
+  <meta name="description" content="Explore photography in an immersive 3D virtual gallery experience">
+  <link rel="stylesheet" href="/src/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <h1 class="loading-title">Kis Photography</h1>
+      <div class="loading-bar">
+        <div class="loading-progress" id="loading-progress"></div>
+      </div>
+      <p class="loading-text" id="loading-text">Loading gallery...</p>
+    </div>
+  </div>
+
+  <!-- Instructions Overlay -->
+  <div id="instructions" class="hidden">
+    <div class="instructions-content">
+      <h2>Welcome to the Gallery</h2>
+      <div class="controls-info">
+        <div class="control-item">
+          <span class="keys">W A S D</span>
+          <span class="action">Move</span>
+        </div>
+        <div class="control-item">
+          <span class="keys">MOUSE</span>
+          <span class="action">Look around</span>
+        </div>
+        <div class="control-item">
+          <span class="keys">CLICK</span>
+          <span class="action">View photo details</span>
+        </div>
+        <div class="control-item">
+          <span class="keys">ESC</span>
+          <span class="action">Release cursor</span>
+        </div>
+      </div>
+      <button id="start-button" class="start-btn">Enter Gallery</button>
+      <p class="mobile-note">Swipe to look around. Tap on photos to view. Use buttons to navigate.</p>
+    </div>
+  </div>
+
+  <!-- Photo Modal -->
+  <div id="photo-modal" class="hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <img id="modal-image" src="" alt="">
+      <div class="modal-info">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI Overlay -->
+  <div id="ui-overlay" class="hidden">
+    <div class="crosshair"></div>
+    <div class="photo-hint hidden" id="photo-hint">
+      <span>Click to view</span>
+    </div>
+    <!-- Photo Info Panel - shows on hover -->
+    <div id="photo-info" class="photo-info hidden">
+      <h4 id="photo-info-title"></h4>
+      <p id="photo-info-description"></p>
+    </div>
+  </div>
+
+  <!-- Mobile 2D Gallery -->
+  <div id="mobile-gallery" class="hidden">
+    <div class="mobile-gallery-header">
+      <div class="mobile-gallery-title"></div>
+      <div class="mobile-gallery-subtitle"></div>
+    </div>
+    <div class="mobile-gallery-carousel">
+      <div class="carousel-track"></div>
+    </div>
+    <div class="carousel-dots"></div>
+    <div class="mobile-gallery-footer">
+      <button class="mode-switch-btn" id="btn-switch-to-3d">View in 3D</button>
+    </div>
+  </div>
+
+  <!-- Mobile 3D Controls (back to 2D only) -->
+  <div id="mobile-3d-controls" class="hidden">
+    <button class="btn-back-2d" id="btn-switch-to-2d" aria-label="Back to 2D">2D</button>
+  </div>
+
+  <!-- Mobile 3D tap-to-view hint -->
+  <div id="mobile-tap-hint" class="hidden">
+    <span>Tap photo to view</span>
+  </div>
+
+  <!-- Mobile 3D Rotation Wheel (right side) -->
+  <div id="mobile-rotation-wheel" class="hidden">
+    <div class="rotation-wheel-track">
+      <div class="rotation-wheel-indicator"></div>
+      <div class="rotation-wheel-arrow left">&#9664;</div>
+      <div class="rotation-wheel-arrow right">&#9654;</div>
+    </div>
+    <div class="rotation-wheel-label">ROTATE</div>
+  </div>
+
+  <!-- Legacy Mobile Controls (hidden, kept for backwards compat) -->
+  <div id="mobile-controls" class="hidden">
+    <div class="joystick-container" id="joystick-container">
+      <div class="joystick-base">
+        <div class="joystick-stick" id="joystick-stick"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Main Script -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

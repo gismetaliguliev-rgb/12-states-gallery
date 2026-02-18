@@ -1,0 +1,308 @@
+{
+  "gallery": {
+    "name": "Kismet",
+    "description": "",
+    "settings": {
+      "wallColor": "#ffffff",
+      "floorColor": "#5a5a5a",
+      "ambientLight": 0.4,
+      "spotlightIntensity": 1.5
+    }
+  },
+  "rooms": [
+    {
+      "id": "main",
+      "name": "Главный зал",
+      "dimensions": {
+        "width": 20,
+        "height": 4,
+        "depth": 16
+      },
+      "spawnPoint": {
+        "x": 0,
+        "y": 1.6,
+        "z": 6
+      }
+    }
+  ],
+  "photos": [
+    {
+      "id": "photo-001",
+      "src": "/assets/photos/Kismet Efkhan 2.jpg",
+      "title": "state 1",
+      "description": "Winter",
+      "dimensions": {
+        "width": 1.6,
+        "height": 1.1
+      },
+      "position": {
+        "room": "main",
+        "wall": "north",
+        "x": -5,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-002",
+      "src": "/assets/photos/Kismet Efkhan 3.jpg",
+      "title": "state 2",
+      "description": "Sky",
+      "dimensions": {
+        "width": 1.6,
+        "height": 1.1
+      },
+      "position": {
+        "room": "main",
+        "wall": "north",
+        "x": -1.5,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-003",
+      "src": "/assets/photos/Kismet Efkhan 4.jpg",
+      "title": "state 3",
+      "description": "Fire",
+      "dimensions": {
+        "width": 1.6,
+        "height": 1.1
+      },
+      "position": {
+        "room": "main",
+        "wall": "north",
+        "x": 2,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-004",
+      "src": "/assets/photos/Kismet Efkhan 5.jpg",
+      "title": "state 4",
+      "description": "Ayaz",
+      "dimensions": {
+        "width": 1.6,
+        "height": 1.1
+      },
+      "position": {
+        "room": "main",
+        "wall": "north",
+        "x": 5.5,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-005",
+      "src": "/assets/photos/Kismet Efkhan 6.jpg",
+      "title": "state 5",
+      "description": "Sunset",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "west",
+        "x": -2,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-006",
+      "src": "/assets/photos/Kismet Efkhan 8.jpg",
+      "title": "state 6",
+      "description": "Hope",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "west",
+        "x": 3,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-007",
+      "src": "/assets/photos/Kismet Efkhan 11.jpg",
+      "title": "state 7",
+      "description": "Destruction",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "east",
+        "x": -2,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-008",
+      "src": "/assets/photos/Kismet Efkhan 9.JPG",
+      "title": "state 8",
+      "description": "Drought",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "east",
+        "x": 3,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-009",
+      "src": "/assets/photos/Kismet Efkhan 10.jpg",
+      "title": "state 9",
+      "description": "Cold",
+      "dimensions": {
+        "width": 0.9,
+        "height": 1.35
+      },
+      "position": {
+        "room": "main",
+        "wall": "south",
+        "x": -6,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-010",
+      "src": "/assets/photos/Kismet Efkhan 7.jpg",
+      "title": "state 10",
+      "description": "Tranquility",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "south",
+        "x": -2,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-011",
+      "src": "/assets/photos/Kismet Efkhan 12.jpg",
+      "title": "state 11",
+      "description": "Fusion",
+      "dimensions": {
+        "width": 1.8,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "south",
+        "x": 2,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-012",
+      "src": "/assets/photos/Kismet Efkhan  13.jpg",
+      "title": "state 12",
+      "description": "Human",
+      "dimensions": {
+        "width": 0.9,
+        "height": 1.35
+      },
+      "position": {
+        "room": "main",
+        "wall": "south",
+        "x": 6,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "modern",
+        "color": "#000000",
+        "width": 0.04
+      }
+    },
+    {
+      "id": "photo-cover",
+      "src": "/assets/photos/Kismet Efkhan 1.jpg",
+      "title": "12 States",
+      "description": "Explication",
+      "dimensions": {
+        "width": 1.6,
+        "height": 1.2
+      },
+      "position": {
+        "room": "main",
+        "wall": "south",
+        "x": -8,
+        "y": 1.7
+      },
+      "frame": {
+        "style": "none",
+        "color": "#000000",
+        "width": 0
+      },
+      "overlay": {
+        "text": "\"12 States\" is an exhibition about states of being.\nHere, trees act as models: in each image they transform,\nbecoming a season, a fire, a stone or water.\nIt is an attempt to see the language in which nature speaks,\nif we look at it with utmost attention.\nWhen we perceive more than just the word \"forest\",\nthe quiet but radical changes happening around us\nbegin to reveal themselves.",
+        "color": "#ffffff",
+        "position": "full"
+      }
+    }
+  ]
+}

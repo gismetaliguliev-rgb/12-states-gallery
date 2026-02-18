@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIS Gallery - CMS Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>KIS Gallery</h1>
+        <span class="subtitle">CMS Admin</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item active" data-section="photos">
+          <span class="icon">🖼️</span>
+          Photos
+        </a>
+        <a href="#" class="nav-item" data-section="rooms">
+          <span class="icon">🏛️</span>
+          Rooms
+        </a>
+        <a href="#" class="nav-item" data-section="settings">
+          <span class="icon">⚙️</span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn btn-primary" id="save-btn">
+          💾 Save Changes
+        </button>
+        <button class="btn btn-secondary" id="preview-btn">
+          👁️ Preview Gallery
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Photos Section -->
+      <section id="photos-section" class="section active">
+        <header class="section-header">
+          <h2>Photos</h2>
+          <button class="btn btn-primary" id="add-photo-btn">
+            + Add Photo
+          </button>
+        </header>
+
+        <div class="photos-grid" id="photos-grid">
+          <!-- Photos will be rendered here -->
+        </div>
+      </section>
+
+      <!-- Rooms Section -->
+      <section id="rooms-section" class="section">
+        <header class="section-header">
+          <h2>Gallery Rooms</h2>
+        </header>
+
+        <div class="room-editor" id="room-editor">
+          <!-- Room editor will be rendered here -->
+        </div>
+      </section>
+
+      <!-- Settings Section -->
+      <section id="settings-section" class="section">
+        <header class="section-header">
+          <h2>Gallery Settings</h2>
+        </header>
+
+        <div class="settings-form" id="settings-form">
+          <div class="form-group">
+            <label>Gallery Name</label>
+            <input type="text" id="gallery-name" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="gallery-description" class="form-input" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Wall Color</label>
+              <input type="color" id="wall-color" class="form-color">
+            </div>
+
+            <div class="form-group">
+              <label>Floor Color</label>
+              <input type="color" id="floor-color" class="form-color">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Ambient Light</label>
+              <input type="range" id="ambient-light" min="0" max="1" step="0.1" class="form-range">
+              <span class="range-value" id="ambient-light-value">0.5</span>
+            </div>
+
+            <div class="form-group">
+              <label>Spotlight Intensity</label>
+              <input type="range" id="spotlight-intensity" min="0" max="2" step="0.1" class="form-range">
+              <span class="range-value" id="spotlight-intensity-value">1.2</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Photo Edit Modal -->
+  <div class="modal hidden" id="photo-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Edit Photo</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+
+      <form class="modal-body" id="photo-form">
+        <div class="form-group">
+          <label>Photo File</label>
+          <div class="file-upload" id="file-upload">
+            <input type="file" id="photo-file" accept="image/*" hidden>
+            <img id="photo-preview" src="" alt="" class="preview-image hidden">
+            <div class="upload-placeholder" id="upload-placeholder">
+              <span class="upload-icon">📷</span>
+              <span>Click to upload or drag image here</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="photo-title" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="photo-description" class="form-input" rows="2"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Wall</label>
+            <select id="photo-wall" class="form-input">
+              <option value="north">North (Back)</option>
+              <option value="south">South (Front)</option>
+              <option value="east">East (Right)</option>
+              <option value="west">West (Left)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Room</label>
+            <select id="photo-room" class="form-input">
+              <option value="main">Main Gallery</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Position X</label>
+            <input type="number" id="photo-x" class="form-input" step="0.1">
+          </div>
+
+          <div class="form-group">
+            <label>Height (Y)</label>
+            <input type="number" id="photo-y" class="form-input" step="0.1" value="1.8">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Display Width (m)</label>
+            <input type="number" id="photo-width" class="form-input" step="0.1" value="1.5">
+          </div>
+
+          <div class="form-group">
+            <label>Display Height (m)</label>
+            <input type="number" id="photo-height" class="form-input" step="0.1" value="1">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Frame Color</label>
+          <input type="color" id="frame-color" class="form-color" value="#1a1a1a">
+        </div>
+      </form>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancel-btn">Cancel</button>
+        <button class="btn btn-danger hidden" id="delete-btn">Delete</button>
+        <button class="btn btn-primary" id="save-photo-btn">Save Photo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
